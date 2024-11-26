@@ -22,7 +22,8 @@ async function init() {
             currentGuess = currentGuess.substring(0, currentGuess.length - 1) + letter
         }
 
-        letters[answerLength * currentRow + currentGuess.length - 1].innerText = letter
+        letters[currentRow * answerLength + currentGuess.length - 1].innerText = letter
+        // letters[currentRow * ANSWER_LENGTH + currentGuess.length - 1].innerText = letter;
     }
 
     async function commit() {
@@ -74,3 +75,33 @@ function setLoading(isLoading) {
 }
 
 init()
+
+
+
+// getting started javascript primer task 1
+
+let favoriteBooks = [];
+
+function addFavoriteBook(bookName) {
+    if (!bookName.includes("Great")) {
+        favoriteBooks.push(bookName)
+    }
+}
+
+addFavoriteBook("A Song of Ice and Fire");
+addFavoriteBook("The Great Gatsby");
+addFavoriteBook("Crime & Punishment");
+addFavoriteBook("Great Expectations");
+addFavoriteBook("You Don't Know JS");
+
+function printFavoriteBooks() {
+    console.log(
+        `Favorite books: ${favoriteBooks.length}`
+    )
+
+    for (let favoriteBook of favoriteBooks) {
+        console.log(favoriteBook)
+    }
+}
+
+printFavoriteBooks()
